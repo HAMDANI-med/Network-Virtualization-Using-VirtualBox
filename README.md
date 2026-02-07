@@ -1,5 +1,5 @@
-# Network-Virtualization-Using-VirtualBox
-
+# Project Report: Network Virtualization Using VirtualBox
+# Mohammed HAMDANI
 ## Introduction
 The objective of this project is to establish a comprehensive virtual network infrastructure using VirtualBox. We configured routers, servers, and Linux clients, interconnected through specific virtual networks, and analyzed network traffic.
 ## Section 1: Environment Setup
@@ -14,12 +14,10 @@ Three private virtual networks (Host-Only) were set up to isolate different segm
 | VirtualBox Host-Only Ethernet Adapter     | 192.168.11.254/24  |             | Disabled    |
 | VirtualBox Host-Only Ethernet Adapter #2  | 192.168.22.254/24  |             | Disabled    |
 | VirtualBox Host-Only Ethernet Adapter #3  | 192.168.33.254/24  |             | Disabled    |
-
 ## Section 2: Network Configuration
 ### 2.1 Interface Verification
 The ``ifconfig -a`` command on the router validated the presence of three network interfaces (eth0, eth1, eth2), each corresponding to a distinct subnet.
-```text
-student@student:~$ ifconfig -a
+```textstudent@student:~$ ifconfig -a
 eth0      Link encap:Ethernet  HWaddr 08:00:27:35:0e:a0
           inet6 addr: fe80::a00:27ff:fe35:ea0/64 Scope:Link
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
@@ -53,12 +51,12 @@ lo        Link encap:Local Loopback
           collisions:0 txqueuelen:1
           RX bytes:1184 (1.1 KB)  TX bytes:1184 (1.1 KB)
 
-student@student:~$
+student@student:~$```
 
-## 2.2 Static IP Configuration
-We edited the ``/etc/network/interfaces`` file to assign fixed IP addresses. The router serves as the default gateway for the other machines.
+### 2.2 Static IP Configuration
+We edited the /etc/network/interfaces file to assign fixed IP addresses. The router serves as the default gateway for the other machines.
 Router Configuration
-text# interfaces(5) file used by ifup(8) and ifdown(8)
+```# interfaces(5) file used by ifup(8) and ifdown(8)
 auto lo
 iface lo inet loopback
 
@@ -76,7 +74,7 @@ auto eth2
 iface eth2 inet static
     address 192.168.33.1
     netmask 255.255.255.0
-textstudent@student:/etc/network$ ifconfig -a
+student@student:/etc/network$ ifconfig -a
 eth0      Link encap:Ethernet  HWaddr 08:00:27:35:0e:a0
           inet addr:192.168.11.1  Bcast:192.168.11.255  Mask:255.255.255.0
           inet6 addr: fe80::a00:27ff:fe35:ea0/64 Scope:Link
@@ -115,7 +113,7 @@ lo        Link encap:Local Loopback
 PC1 Configuration
 textGNU nano 2.2.6
 
-#interfaces(5) file used by ifup(8) and ifdown(8)
+# interfaces(5) file used by ifup(8) and ifdown(8)
 auto lo
 iface lo inet loopback
 
@@ -146,7 +144,7 @@ lo        Link encap:Local Loopback
 student@student:/etc/network$
 Server Configuration
 textGNU nano 2.2.6
-#interfaces(5) file used by ifup(8) and ifdown(8)
+# interfaces(5) file used by ifup(8) and ifdown(8)
 auto lo
 iface lo inet loopback
 
