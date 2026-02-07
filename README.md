@@ -8,10 +8,12 @@ We created four virtual machines from a base Ubuntu image. To optimize disk spac
 
 ### 1.2 Configuration of Host-Only Networks
 Three private virtual networks (Host-Only) were set up to isolate different segments of the project. The VirtualBox DHCP service was disabled to enable manual IP address configuration.
-``NameIPv4 PrefixIPv6 PrefixDHCP ServerVirtualBox``
-``Host-Only Ethernet Adapter192.168.11.254/24 DisabledVirtualBox`` 
-``Host-Only Ethernet Adapter 2192.168.22.254/24 DisabledVirtualBox``
-``Host-Only Ethernet Adapter 3192.168.33.254/24 DisabledVitualBox``
+
+| Name                                      | IPv4 Prefix        | IPv6 Prefix | DHCP Server |
+|-------------------------------------------|--------------------|-------------|-------------|
+| VirtualBox Host-Only Ethernet Adapter     | 192.168.11.254/24  |             | Disabled    |
+| VirtualBox Host-Only Ethernet Adapter #2  | 192.168.22.254/24  |             | Disabled    |
+| VirtualBox Host-Only Ethernet Adapter #3  | 192.168.33.254/24  |             | Disabled    |
 
 ## Section 2: Network Configuration
 ### 2.1 Interface Verification
