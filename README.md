@@ -18,7 +18,8 @@ Three private virtual networks (Host-Only) were set up to isolate different segm
 ## Section 2: Network Configuration
 ### 2.1 Interface Verification
 The ``ifconfig -a`` command on the router validated the presence of three network interfaces (eth0, eth1, eth2), each corresponding to a distinct subnet.
-textstudent@student:~$ ifconfig -a
+```text
+student@student:~$ ifconfig -a
 eth0      Link encap:Ethernet  HWaddr 08:00:27:35:0e:a0
           inet6 addr: fe80::a00:27ff:fe35:ea0/64 Scope:Link
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
